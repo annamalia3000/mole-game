@@ -30,7 +30,7 @@ export default class GamePlay {
             this.boardEl.appendChild(cellEl);
         }
 
-        this.cells = Array.from(this.boardEl.children);
+        this.cells = [...this.boardEl.children];
     }
 
     checkBinding() {
@@ -39,4 +39,3 @@ export default class GamePlay {
         }
     }
 }
-
