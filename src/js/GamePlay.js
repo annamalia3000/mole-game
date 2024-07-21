@@ -15,12 +15,15 @@ export default class GamePlay {
 
     drawUi() {
         this.checkBinding();
-
         this.container.innerHTML = `
-      <div class="board-container">
-        <div data-id="board" class="board"></div>
-      </div>
-    `;
+        <div class="score-board">
+            <div class="score">Score: 0</div>
+            <div class="missed">Missed: 0</div>
+        </div>
+        <div class="board-container">
+          <div data-id="board" class="board"></div>
+        </div>
+      `;
 
         this.boardEl = this.container.querySelector('[data-id=board]');
 
@@ -30,7 +33,7 @@ export default class GamePlay {
             this.boardEl.appendChild(cellEl);
         }
 
-        this.cells = [...this.boardEl.children];
+        this.cells = [ ...this.boardEl.children ];
     }
 
     checkBinding() {
