@@ -49,15 +49,12 @@ export default class GameController {
     }
 
     addCellClickHandlers() {
-        this.gamePlay.cells.forEach(cell => {
-            cell.addEventListener('click', (e) => {
-                if (e.target.classList.contains('character')) {
-                    this.scoreBoard.updateScore();
-                    this.character.remove();
-                    this.characterClicked = true;
-                    
-                }
-            });
+        this.gamePlay.container.addEventListener('click', (e) => {
+            if (e.target.classList.contains('character')) {
+                this.scoreBoard.updateScore();
+                this.character.remove();
+                this.characterClicked = true;
+            }
         });
     }
 
